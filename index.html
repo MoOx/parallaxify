@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parallaxify, add parallax effect to background image when scrolling</title>
+<meta name="description" content="Parallaxify allow you to add parallax effect to background images when scrolling. It's a simple standalone JavaScript module (no jQuery or similar required) that is less thant 1kb (minified &amp; gzipped)." />
+<style>
+
+/* parallaxify styles */
+
+html { height: 100% }
+body { height: 100% }
+
+.js-Parallaxify {
+  position: relative;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* stretch body child for wow effect*/
+body > .js-Parallaxify { background-size: cover }
+
+/* for "hoverable" child, see rules below (that use absolute) */
+.js-Parallaxify > * { position: relative }
+
+.js-Parallaxify > .js-Parallaxify {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* pages styles, not interesting for you */
+body {
+  margin: 0;
+  font-family: "Corbel", "Gill Sans", GillSans, Roboto, "Droid Sans", Lucida, Verdana, sans-serif;
+}
+
+.Title {
+  display: block;
+  text-align: center;
+  font-size: 6rem;
+  padding: 2em;
+  margin: 0;
+  color: #fff !important;
+  text-shadow: 0 .1rem .1em rgba(0, 50, 100, .8);
+}
+
+</style>
+</head>
+<body>
+<div class="js-Parallaxify" style="background-image: url('http://lorempixel.com/400/800/sports/')">
+  <h1 class="Title">Parallaxify</h1>
+  <div class="js-Parallaxify" style="background-image: url('http://ima.gs/transparent/000/f42064/wow-400x200.png');" data-parallaxify-y-min="100" data-parallaxify-y-max="40"></div>
+</div>
+<div class="js-Parallaxify" style="background-image: url('http://lorempixel.com/400/600/abstract/')" data-parallaxify-y-min="0" data-parallaxify-y-max="100">
+  <div class="js-Parallaxify" style="background-image: url('http://ima.gs/transparent/000/e7d164/background-600x200.png'); background-position: 10% 50%;"></div>
+</div>
+<div class="js-Parallaxify" style="background-image: url('http://lorempixel.com/400/600/nightlife/')">
+  <div class="Title" style="text-align: right">No jQuery</div>
+  <div class="js-Parallaxify" style="background-image: url('http://ima.gs/transparent/000/7ed297/such-600x200.png'); background-position: 90% 50%;"></div>
+</div>
+<div class="js-Parallaxify" style="background-image: url('http://lorempixel.com/400/600/city/')" data-parallaxify-y-min="0" data-parallaxify-y-max="100">
+  <div class="Title" style="text-align: left">Less than 1kb</div>
+  <div class="js-Parallaxify" style="background-image: url('http://ima.gs/transparent/000/a5d200/scrolling-600x200.png');"  data-parallaxify-y-min="20" data-parallaxify-y-max="80"></div>
+</div>
+<div class="js-Parallaxify" style="background-image: url('http://lorempixel.com/400/1000/people/')">
+  <div class="Title" style="text-align: right">Works in CommonJS, AMD or old school environement</div>
+  <div class="js-Parallaxify" style="background-image: url('http://ima.gs/transparent/000/ffc0cb/very-600x200.png');" data-parallaxify-y-min="20" data-parallaxify-y-max="80"></div>
+</div>
+<div class="js-Parallaxify" style="background-image: url('http://lorempixel.com/400/1000/fashion/')" data-parallaxify-y-min="100" data-parallaxify-y-max="50">
+  <div class="js-Parallaxify" style="background-image: url('http://ima.gs/transparent/000/fff/deep-400x200.png');" data-parallaxify-y-min="60" data-parallaxify-y-max="40"></div>
+
+  <a class="Title" href="https://github.com/MoOx/parallaxify">Checkout Parallaxify documentation on Github</a>
+  <br /><br /><br />
+  <div class="Title">Or just view source.</div>
+</div>
+
+<script src="parallaxify.js"></script>
+<script>new Parallaxify().registerUpdate()</script>
+
+<script>var _gaq=[['_setAccount','UA-1716762-6'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>
+</body>
+</html>
