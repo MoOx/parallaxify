@@ -1,10 +1,9 @@
-///
 var pkg = require("./package.json")
   , gulp = require("gulp")
   , plumber = require("gulp-plumber")
 
 ///
-// Lint JS
+// JS Lint
 ///
 var jshint = require("gulp-jshint")
   , jsonFiles = [".jshintrc", "*.json"]
@@ -16,6 +15,9 @@ gulp.task("scripts.lint", function() {
     .pipe(jshint.reporter("jshint-stylish"))
 })
 
+///
+// JS Code Sniffing
+///
 var jscs = require("gulp-jscs")
 gulp.task("scripts.cs", function() {
   gulp.src(jsFiles)
@@ -23,16 +25,19 @@ gulp.task("scripts.cs", function() {
     .pipe(jscs())
 })
 
+// JS Alias
 gulp.task("scripts", ["scripts.lint", "scripts.cs"])
 
+///
+// Watch
+///
 gulp.task("watch", function() {
   gulp.watch(jsFiles, ["scripts"])
 })
 
-gulp.task("dist", ["scripts"])
-gulp.task("test", ["dist"])
-gulp.task("default", ["test", "watch"])
-
+///
+// Publish gh-branch
+///
 var buildBranch = require("buildbranch")
 gulp.task("publish", ["test"], function(cb) {
   buildBranch({folder: "src"}
@@ -44,3 +49,8 @@ gulp.task("publish", ["test"], function(cb) {
       cb()
     })
 })
+
+// Aliases
+gulp.task("build", ["scripts"])
+gulp.task("test", ["build"])
+gulp.task("default", ["test", "watch"])
