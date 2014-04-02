@@ -30,3 +30,15 @@ gulp.task("watch", function() {
 })
 
 gulp.task("default", ["scripts", "watch"])
+
+var buildBranch = require("buildbranch")
+gulp.task("publish", function(cb) {
+  buildBranch({folder: "src"}
+  , function(err) {
+      if (err) {
+        throw err
+      }
+      console.log(pkg.name + " published.")
+      cb()
+    })
+})
