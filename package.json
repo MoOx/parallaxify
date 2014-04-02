@@ -29,6 +29,7 @@
     "gulp-jscs": "^0.3.2",
     "gulp-plumber": "^0.5.6",
     "gulp": "^3.5.6",
-    "gulp-jshint": "^1.5.1"
+    "gulp-jshint": "^1.5.1",
+    "buildbranch": "0.0.1"
   }
 }
