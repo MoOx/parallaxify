@@ -1,4 +1,4 @@
-(function(root, factory) {
+;(function(root, factory) {
   if (typeof exports === "object") {
     // CommonJS
     module.exports = factory()
@@ -142,4 +142,4 @@
   }
 
   return Parallaxify
-}))
+}));
