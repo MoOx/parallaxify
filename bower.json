@@ -1,6 +1,6 @@
 {
   "name": "parallaxify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add parallax effect to your existing pages",
   "main": "src/parallaxify.js",
   "authors": [
