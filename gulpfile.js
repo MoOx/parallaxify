@@ -29,10 +29,12 @@ gulp.task("watch", function() {
   gulp.watch(jsFiles, ["scripts"])
 })
 
-gulp.task("default", ["scripts", "watch"])
+gulp.task("dist", ["scripts"])
+gulp.task("test", ["dist"])
+gulp.task("default", ["test", "watch"])
 
 var buildBranch = require("buildbranch")
-gulp.task("publish", function(cb) {
+gulp.task("publish", ["test"], function(cb) {
   buildBranch({folder: "src"}
   , function(err) {
       if (err) {
