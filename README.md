@@ -2,10 +2,6 @@
 
 > Such deep. Very scroll. Wow background.
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/6RNUx3a3Vj2k5iApeppsc9L9/MoOx/parallaxify'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/6RNUx3a3Vj2k5iApeppsc9L9/MoOx/parallaxify.svg' />
-</a>
-
 Parallaxify allow you to add parallax effect to background images when scrolling.
 It's a simple standalone JavaScript module (no jQuery or similar required) that is
 _less thant 1kb (minified &amp; gzipped)_.
